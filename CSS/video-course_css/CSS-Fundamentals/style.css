@@ -9,7 +9,7 @@ body {
   border-top: 10px solid #1098ad;
 }
 .container {
-  width: 700px;
+  width: 800px;
   margin: 0 auto;
 }
 nav {
@@ -18,12 +18,8 @@ nav {
 
 .main-header {
   background-color: #f7f7f7;
-  /* padding: 20px;
-    padding-left: 40px;
-    padding-right: 40px; */
   padding: 20px 40px;
   margin-bottom: 60px;
-  /* height: 80px; */
 }
 
 .post-header {
