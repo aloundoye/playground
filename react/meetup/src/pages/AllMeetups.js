@@ -1,34 +1,31 @@
 import MeetupList from "../components/meetups/MeetupList";
-
-const DUMMY_DATA = [
-  {
-    id: "m1",
-    title: "This is a first meetup",
-    image:
-      "https://images.unsplash.com/photo-1542281286-9e0a16bb7366?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80",
-    description: "This is a first meetup",
-  },
-  {
-    id: "m2",
-    title: "This is a second meetup",
-    image:
-      "https://images.unsplash.com/photo-1542281286-9e0a16bb7366?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80",
-    description: "This is a second meetup",
-  },
-  {
-    id: "m3",
-    title: "This is a third meetup",
-    image:
-      "https://images.unsplash.com/photo-1542281286-9e0a16bb7366?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80",
-    description: "This is a third meetup",
-  },
-];
+import { useState } from "react";
 
 function AllMeetupsPage() {
+  const [isloading, setIsLoading] = useState(true);
+  const [loadedMeetups, setLoadedMeetups] = useState([]);
+
+  fetch("https://react-meetup-7bb76-default-rtdb.firebaseio.com/meetups.json")
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      setIsLoading(false);
+      setLoadedMeetups(data);
+    });
+
+  if (isloading) {
+    return (
+      <section>
+        <p>Loading...</p>
+      </section>
+    );
+  }
+
   return (
     <section>
       <h1>All meetup page</h1>
-      <MeetupList meetups={DUMMY_DATA} />
+      <MeetupList meetups={loadedMeetups} />
     </section>
   );
 }
