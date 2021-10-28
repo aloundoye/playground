@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 function AllMeetupsPage() {
   const [isloading, setIsLoading] = useState(true);
   const [loadedMeetups, setLoadedMeetups] = useState([]);
+
   useEffect(() => {
     setIsLoading(true);
     fetch("https://react-meetup-7bb76-default-rtdb.firebaseio.com/meetups.json")
