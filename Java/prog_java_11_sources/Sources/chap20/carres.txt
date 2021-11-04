@@ -1,0 +1,4 @@
+5 a pour carre 25
+12 a pour carre 144
+45 a pour carre 2025
+2 a pour carre 4

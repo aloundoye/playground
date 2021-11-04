@@ -1,0 +1,33 @@
+import javax.swing.* ;
+import java.awt.* ;
+import java.awt.event.* ;
+class MaFenetre extends JFrame
+{ MaFenetre ()
+  { setTitle ("Traces de clics") ;
+    setSize (300, 150) ;
+    pan = new JPanel() ;
+    getContentPane().add(pan) ;
+    pan.addMouseListener (new EcoutClic(pan)) ;
+  }
+  private JPanel pan ;
+}
+
+class EcouteClic extends MouseAdapter
+{ public EcouteClic (JPanel pan)
+  { this.pan = pan ;
+  }
+  public void mouseClicked (MouseEvent e)
+  { int x = e.getX(), y = e.getY() ;
+    System.out.println ("clic " + x + " " + y) ;
+  }
+  private JPanel pan ;
+}
+public class TrClics1
+{ public static void main (String args[])
+  { MaFenetre fen = new MaFenetre() ;
+    fen.setVisible(true) ;
+  }
+}
+
+
+
