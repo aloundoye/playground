@@ -2,6 +2,7 @@
   /* border-top: 10px solid #1098ad; */
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 /* PAGE SECTIONS */
@@ -78,6 +79,7 @@ h4 {
   font-size: 20px;
   text-transform: uppercase;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 p {
@@ -88,7 +90,6 @@ p {
 
 ul,
 ol {
-  margin-left: 50px;
   margin-bottom: 20px;
 }
 
@@ -271,6 +272,7 @@ article {
 aside {
   width: 300px;
   float: right;
+  padding: 50px 40px;
 }
 footer {
   clear: both;
