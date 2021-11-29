@@ -1,52 +1,53 @@
 <!DOCTYPE html>
 <head>
   <style>
-    /* keep the spans from bleeding off the top of the page */
-    body {
-      font-size: 16px;
-    }
-    .slogan {
-      font-size: 1.2em;
-      padding: 1.2em;
-      background-color: #ccc;
-    }
-    ul {
-      font-size: 0.8em;
-    }
-    ul:first-child {
-      font-size: 1em;
+    :root {
+      font-size: 0.75em;
     }
 
-    /* ul ul {
-      font-size: 1em;
-    } */
+    @media (min-width: 768px) {
+      :root {
+        font-size: 0.875rm;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      :root {
+        font-size: 1em;
+      }
+    }
+
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+    }
+
+    .panel {
+      font-size: 1rem;
+      padding: 1em;
+      border: 1px solid #999;
+      border-radius: 0.5em;
+    }
+
+    .panel > h2 {
+      margin-top: 0;
+      font-size: 0.8em;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .panel.large {
+      font-size: 1.2rem;
+    }
   </style>
 </head>
 
 <body>
-  We love coffee
-  <p class="slogan">We love coffee</p>
-  <ul>
-    <li>
-      Top level
-      <ul>
-        <li>
-          Second level
-          <ul>
-            <li>
-              Third level
-              <ul>
-                <li>
-                  Fourth level
-                  <ul>
-                    <li>Fifth level</li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
+  <div class="panel large">
+    <h2>Single-origin</h2>
+    <div class="panel-body">
+      We have built partnerships with small farms around the world to
+      hand-select beans at the peak of season. We then carefully roast in
+      <a href="/batch-size.html">small batches</a> to maximize their potential.
+    </div>
+  </div>
 </body>
