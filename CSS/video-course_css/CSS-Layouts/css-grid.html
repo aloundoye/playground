@@ -14,7 +14,7 @@
       }
       .el--3 {
         background-color: green;
-        height: 150px;
+        height: 120px;
       }
       .el--4 {
         background-color: goldenrod;
@@ -34,25 +34,58 @@
 
       .container--1 {
         /* STARTER */
+
         font-family: sans-serif;
         background-color: #ddd;
-        font-size: 40px;
+        font-size: 30px;
         margin: 40px;
 
         /* CSS GRID */
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr 1fr;
+
+        column-gap: 20px;
+        row-gap: 40px;
+
+        height: 500px;
+        display: none;
+      }
+      .container--1 .el--8 {
+        grid-column: 2/3;
+        grid-row: 1/2;
+      }
+      .container--1 .el--2 {
+        grid-column: 1/-1;
+        grid-row: 2;
       }
 
+      .container--1 .el--6 {
+        grid-row: 3/6;
+      }
       .container--2 {
+        /* display: none; */
         /* STARTER */
         font-family: sans-serif;
         background-color: black;
         font-size: 40px;
-        margin: 100px;
+        margin: 40px;
+        gap: 50px;
 
-        width: 1000px;
+        width: 700px;
         height: 600px;
 
         /* CSS GRID */
+        display: grid;
+        grid-template-columns: 125px 200px 125px;
+        grid-template-rows: 250px 100px;
+        /* Aligning tracks inside container distribute empty espace  */
+        justify-content: center;
+        /* justify-content: space-between; */
+        align-content: center;
+        /* aligning items inside cells: moving items around inside cells */
+        align-items: end;
+        justify-items: center;
       }
     </style>
   </head>

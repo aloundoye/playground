@@ -24,16 +24,11 @@ body {
 .main-header {
   background-color: #f7f7f7;
   padding: 20px 40px;
-  margin-bottom: 60px;
 }
 
 nav {
   font-size: 18px;
   /* text-align: center; */
-}
-
-article {
-  margin-bottom: 60px;
 }
 
 .post-header {
@@ -187,14 +182,7 @@ a:active {
 }
 
 nav a:link {
-  /* background-color: orangered;
-  margin: 20px;
-  padding: 20px;
-
-  display: block; */
-
   margin-right: 30px;
-  margin-top: 10px;
   display: inline-block;
 }
 
@@ -241,7 +229,9 @@ h2::before {
   right: -25px;
 }
 
-.author-img {
+/* FLOATS */
+
+/*.author-img {
   float: left;
   margin-bottom: 20px;
 }
@@ -276,4 +266,86 @@ aside {
 }
 footer {
   clear: both;
+}
+*/
+
+/* FLEXBOX */
+
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.author-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.author {
+  margin-bottom: 0;
+  margin-left: 15px;
+}
+
+.related-post {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+.related-link:link {
+  font-size: 17px;
+  font-weight: bold;
+  font-style: normal;
+  margin-bottom: 5px;
+  display: block;
+}
+.related-author {
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: italic;
+}
+/* flexbox layout*/
+/*
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: 75px;
+  margin-bottom: 60px;
+}
+
+article {
+   flex: 0 0 825px; 
+  flex: 1;
+  margin-bottom: 0;
+}
+
+aside {
+  flex: 0 0 300px;
+  padding: 50px 40px;
+}*/
+
+/* GRID LAYOUT */
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  column-gap: 75px;
+  row-gap: 60px;
+  align-items: start;
+}
+
+.main-header {
+  grid-column: 1 / -1;
+}
+
+article {
+}
+
+aside {
+}
+footer {
+  grid-column: 1 / -1;
 }
