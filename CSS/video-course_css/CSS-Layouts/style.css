@@ -345,6 +345,7 @@ article {
 }
 
 aside {
+  width: 300px;
 }
 footer {
   grid-column: 1 / -1;
