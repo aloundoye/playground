@@ -5,17 +5,10 @@ function Homepage(props) {
   return <MeetupList meetups={props.meetups} />;
 }
 
-/*
-export async function getServerSideProps(context) {
-  const req = context.req;
-  const res = context.res;
-}
-*/
-
 export async function getStaticProps() {
   // fetch data from an API
   const client = await MongoClient.connect(
-    "mongodb+srv://alou:dakar1996@cluster0.yluko.mongodb.net/meetups?retryWrites=true&w=majority"
+    "mongodb+srv://<user>:<password>@<cluster>.mongodb.net/meetups?retryWrites=true&w=majority"
   );
   const db = client.db();
 
