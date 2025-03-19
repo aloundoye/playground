@@ -7,6 +7,10 @@ import getStdin from 'get-stdin';
 import path from 'path';
 import fs from 'fs';
 import util from 'util';
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const args = minimist(process.argv.slice(2), {
   boolean: ['help', 'in'],
