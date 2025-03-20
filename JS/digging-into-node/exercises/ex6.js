@@ -4,7 +4,6 @@
 
 import util from 'util';
 import path from 'path';
-import http from 'http';
 
 import express from 'express';
 import sqlite3 from 'sqlite3';
@@ -45,30 +44,6 @@ main();
 
 function main() {
   // TODO: define routes
-  //
-  // Hints:
-  //
-  // {
-  // 	match: /^\/(?:index\/?)?(?:[?#].*$)?$/,
-  // 	serve: "index.html",
-  // 	force: true,
-  // },
-  // {
-  // 	match: /^\/js\/.+$/,
-  // 	serve: "<% absPath %>",
-  // 	force: true,
-  // },
-  // {
-  // 	match: /^\/(?:[\w\d]+)(?:[\/?#].*$)?$/,
-  // 	serve: function onMatch(params) {
-  // 		return `${params.basename}.html`;
-  // 	},
-  // },
-  // {
-  // 	match: /[^]/,
-  // 	serve: "404.html",
-  // },
-
   app.use(express.static('web'));
 
   app.get('/', (req, res) => {
