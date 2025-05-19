@@ -1,0 +1,31 @@
+<link href="new-task.component.css" rel="stylesheet" />
+<div (click)="onCancelAddTask()" class="backdrop"></div>
+<dialog open>
+  <h2>Add Task</h2>
+  <form (ngSubmit)="onSubmitTask()">
+    <p>
+      <label for="title">Title</label>
+      <input id="title" name="title" type="text" [(ngModel)]="title" />
+    </p>
+
+    <p>
+      <label for="summary">Summary</label>
+      <textarea
+        id="summary"
+        name="summary"
+        rows="5"
+        [(ngModel)]="summary"
+      ></textarea>
+    </p>
+
+    <p>
+      <label for="due-date">Due Date</label>
+      <input id="due-date" name="due-date" type="date" [(ngModel)]="dueDate" />
+    </p>
+
+    <p class="actions">
+      <button (click)="onCancelAddTask()" type="button">Cancel</button>
+      <button type="submit">Create</button>
+    </p>
+  </form>
+</dialog>
